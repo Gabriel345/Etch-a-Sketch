@@ -1,20 +1,49 @@
 #container {
+    width: 90%;
+    height: 5%;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    border: 20px solid black;
 }
 
 .nova-div {
-    background-color: black;
+    background-color: rgb(255, 255, 255);
     color: aliceblue;
     padding: 10px;
     margin: 10px 0;
     flex: 1 1 calc(33.333% - 20px);
     box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    height: 100px; /* Definido para que a div tenha altura suficiente */
 }
 
-.nova-div:hover {
-    background-color: aliceblue;
-    color: black;
-    transition: 0.5s;
+.nova-div::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    filter: blur(4px);
+    pointer-events: none;
+    transform: scale(0);
+    transition: transform 0.3s;
+    z-index: 1;
+}
+
+.nova-div.active::before {
+    transform: scale(1);
+}
+
+.pixel-trail {
+    position: absolute;
+    width: 20px; /* Tamanho do pixel */
+    height: 20px; /* Tamanho do pixel */
+    background-color: rgba(0, 0, 0, 0.5); /* Cor do pixel */
+    pointer-events: none;
+    transition: opacity 0.2s ease; /* Adicionando transição de opacidade */
+    opacity: 1; /* Inicialmente visível */
 }
