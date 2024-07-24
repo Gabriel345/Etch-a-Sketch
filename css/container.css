@@ -1,0 +1,20 @@
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.nova-div {
+    background-color: black;
+    color: aliceblue;
+    padding: 10px;
+    margin: 10px 0;
+    flex: 1 1 calc(33.333% - 20px);
+    box-sizing: border-box;
+}
+
+.nova-div:hover {
+    background-color: aliceblue;
+    color: black;
+    transition: 0.5s;
+}

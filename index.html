@@ -7,7 +7,19 @@
     <title>Etch-a-Sketch</title>
 </head>
 <body>
+    <div id="container">
+
+
+    </div>
     
+    <svg width="0" height="0">
+        <filter id="pixelate-filter">
+            <feFlood x="4" y="4" height="4" width="4" />
+            <feTile result="a" />
+            <feComposite in="SourceGraphic" in2="a" operator="in" />
+            <feMorphology operator="dilate" radius="1" />
+        </filter>
+    </svg>
 
     <script src="./js/script.js"></script>
 </body>
