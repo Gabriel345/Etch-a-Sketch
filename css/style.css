@@ -1,5 +1,14 @@
 @import url('./filter.css');
 @import url('./container.css');
-
+@import url('./modal.css');
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
 
 

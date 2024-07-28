@@ -7,9 +7,19 @@
     <title>Etch-a-Sketch</title>
 </head>
 <body>
+    <button id="clearGrid">Clear Grid</button>
+    <button id="openModal">Create Grid</button>
     <div id="container">
 
 
+    </div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <label for="numDivs">Number of Pixels (1 - 100): </label>
+            <input type="number" id="numDivs" min="1" max="100">
+            <button id="createGrid">Create</button>
+        </div>
     </div>
 
     <script src="./js/script.js"></script>
