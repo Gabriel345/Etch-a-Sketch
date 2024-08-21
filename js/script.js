@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const numDivsInput = document.getElementById('numDivs');
     const container = document.getElementById('container');
     const colorPicker = document.getElementById('colorPicker');
+    const instructionPopup = document.getElementById('instructionPopup');
+    const closePopupButton = document.getElementById('closePopupButton');
     let isShiftPressed = false;
 
     openModalButton.addEventListener('click', () => {
@@ -37,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
+        // Remove todos os filhos existentes no container
         while (container.firstChild) {
             container.removeChild(container.firstChild);
         }
@@ -67,7 +70,15 @@ document.addEventListener('DOMContentLoaded', () => {
             container.appendChild(pixelDiv);
         }
 
+        // Exibe o pop-up após a criação da grid
+        instructionPopup.style.display = 'block';
+
+        // Fecha o modal
         modal.style.display = 'none';
+    });
+
+    closePopupButton.addEventListener('click', () => {
+        instructionPopup.style.display = 'none';
     });
 
     resetGridButton.addEventListener('click', () => {
@@ -77,4 +88,9 @@ document.addEventListener('DOMContentLoaded', () => {
             div.style.backgroundColor = `hsl(0, 0%, 100%)`; // Cor inicial branca
         });
     });
+
+    // Fecha automaticamente o pop-up após 5 segundos
+    setTimeout(() => {
+        instructionPopup.style.display = 'none';
+    }, 5000);
 });
